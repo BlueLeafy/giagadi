@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giagadì</title>
+
+    <!-- css bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- css cutom -->
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body class="body">
+    <!-- Navbar -->
+    <nav id="navBar" class="navbar navbar-expand-lg fixed-top">
+        <div class="container d-flex align-items-center">
+            <a href="#" class="navbar-brand">Giagadì</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link light">Home
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="#organic" class="nav-link light">Organic
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#origins" class="nav-link light">Origins
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link light">Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HERO CAROUSEL -->
+    <section id="hero" class="d-flex align-items-center justify-content-center">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <!-- Oil bottle image -->
+                <div class="col-4" style="background-color: aqua; height: 500px">
+                    <!-- Add image or content here -->
+                </div>
+
+                <!-- carousel items -->
+                <div class="col-7">
+                    <div id="oilCarousel" data-interval="false" class="carousel slide h-100" data-ride="carousel">
+                        <div class="carousel-inner h-75">
+                            <div id="itemBrand" class="carousel-item active">
+                                <h1>Giagadì</h1>
+                                <p class="lead">Discover the Essence of Tradition</p>
+                                <p>Experience the finest extra virgin olive oil, crafted with love and care in the heart
+                                    of
+                                    San Vito dei Normanni and Torre Guaceto. Taste the purity and heritage of our
+                                    family-owned olive grove.</p>
+                            </div>
+                            <div id="itemOrganic" class="carousel-item">
+                                <h1>Organic</h1>
+                                <p class="lead">Discover the Essence of Tradition</p>
+                                <p>Experience the finest extra virgin olive oil, crafted with love and care in the heart
+                                    of
+                                    San Vito dei Normanni and Torre Guaceto. Taste the purity and heritage of our
+                                    family-owned olive grove.</p>
+                            </div>
+                            <div id="itemOrigins" class="carousel-item">
+                                <h1>Origins</h1>
+                                <p class="lead">Discover the Essence of Tradition</p>
+                                <p>Experience the finest extra virgin olive oil, crafted with love and care in the heart
+                                    of
+                                    San Vito dei Normanni and Torre Guaceto. Taste the purity and heritage of our
+                                    family-owned olive grove.</p>
+                            </div>
+                        </div>
+                        <ol class="carousel-indicators indicators">
+                            <li data-target="itemBrand" data-slide-to="0" class="active"></li>
+                            <li data-target="itemOrganic" data-slide-to="1"></li>
+                            <li data-target="itemOrigins" data-slide-to="2"></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- HERO CAROUSEL ENDS -->
+
+    <!-- CARATTERISTICHE -->
+    <!-- tot ogliarola etc. -->
+    <section id="composition" class="d-flex align-items-start justify-content-center">
+        <div class="container">
+            <!-- COMPOSITION -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-center">
+                        <div class="composition-inner d-flex flex-row justify-content-between w-100">
+                            <div class="composition-item">
+                                <div class="composition-body-underlay">
+                                    <div class="composition-body">
+                                        <span>90%</span>
+                                        <span>Ogliarola</span>
+                                    </div>
+                                </div>
+                                <!-- Pointing arrow -->
+                                <div class="arrow-container">
+                                    <div class="arrow arrow-left"></div>
+                                    <div class="magnifier magnifier-left"></div>
+                                </div>
+                            </div>
+                            <div class="composition-item">
+                                <div class="oval">
+                                    <!-- here will go image olive -->
+                                </div>
+                            </div>
+                            <div class="composition-item">
+                                <div class="composition-body-underlay">
+                                    <div class="composition-body">
+                                        <span>10%</span>
+                                        <span>Nardò</span>
+                                    </div>
+                                </div>
+                                <!-- Pointing arrow -->
+                                <div class="arrow-container">
+                                    <div class="magnifier magnifier-right"></div>
+                                    <div class="arrow arrow-right"></div>
+                                </div>
+                            </div>
+                            <div class="composition-item">
+                                <div class="composition-body-underlay">
+                                    <div class="composition-body">
+                                        <span>0.4</span>
+                                        <span>Level of <br>acitdity</span>
+                                    </div>
+                                </div>
+                                <!-- Pointing arrow -->
+                                <div class="arrow-container">
+                                    <div class="arrow arrow-left"></div>
+                                    <div class="magnifier magnifier-left"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CARATTERISTICHE ENDS -->
+
+    <!-- Harvesting and Pressing -->
+    <!-- Quality and Purity -->
+    <!-- Taste -->
+    <!-- Roots -->
+
+    <!-- ORGANIC -->
+    <section id="organic" class="d-flex align-items-start justify-content-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ORGANIC ENDS -->
+
+    <!-- OLIVE GROVE -->
+    <!-- OLIVE GROVE ENDS -->
+
+    <!-- CONTACT -->
+    <!-- CONTACT ENDS -->
+
+
+    <!-- Latest Bootstrap JS and dependencies (Popper.js) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+    <!-- script custom -->
+    <script src="static/app.js"></script>
+</body>
+
+</html>

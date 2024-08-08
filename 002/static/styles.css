@@ -1,0 +1,543 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --white-txt: 255, 255, 255;
+    --dark-txt: 31, 32, 36;
+    --white-cl: 255, 255, 255;
+    --black-cl: 0, 0, 0;
+    --font-face: 'Roboto', sans-serif;
+    --midnight-green: 0, 73, 83;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    border: 0 solid rgba(var(--black-cl), 0.1);
+}
+
+html {
+    color: rgba(var(--dark-txt), 1);
+    line-height: 1.5;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    -ms-scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
+    -moz-scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    -ms-scroll-snap-type: y mandatory;
+    -webkit-scroll-snap-type: y mandatory;
+    -moz-scroll-snap-type: y mandatory;
+    scrollbar-color: rgba(var(--midnight-green), 1) rgba(var(--midnight-green), 0.5);
+    -ms-scrollbar-color: rgba(var(--midnight-green), 1) rgba(var(--midnight-green), 0.5);
+    -webkit-scrollbar-color: rgba(var(--midnight-green), 1) rgba(var(--midnight-green), 0.5);
+    -moz-scrollbar-color: rgba(var(--midnight-green), 1) rgba(var(--midnight-green), 0.5);
+}
+
+body {
+    margin: 0;
+    line-height: inherit;
+    font-family: 'Roboto', sans-serif;
+}
+
+.body section {
+    scroll-snap-align: start;
+    -ms-scroll-snap-align: start;
+    -webkit-scroll-snap-align: start;
+    -moz-scroll-snap-align: start;
+    scroll-snap-stop: always;
+    -ms-scroll-snap-stop: always;
+    -webkit-scroll-snap-stop: always;
+    -moz-scroll-snap-stop: always;
+}
+
+.body {
+    background-color: antiquewhite;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.body::before {
+    content: '';
+    background-image: url("media/images/0001.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -100000;
+}
+
+.body::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -9999;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
+}
+
+/* NAV */
+.navbar {
+    background: linear-gradient(to right, rgba(0, 73, 83, 0.5) 40%, rgba(0, 73, 83, 1) 60%);
+    /* rgba(0, 73, 83, 1) */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(0, 73, 83, 0.6);
+    padding: 0 0;
+}
+
+.navbar.light {
+    background-color: rgba(var(--white-cl), 0.2);
+    box-shadow: 1px 1px 8px -1px rgba(26, 27, 28, .1);
+}
+
+.navbar.light a {
+    color: rgba(var(--dark-txt), 1);
+}
+
+.navbar.dark a {
+    color: rgba(var(--white-txt), 1);
+}
+
+.nav-item {
+    padding: 16px 10px;
+    cursor: pointer;
+    transition: background-color 100ms ease-in, box-shadow 100ms ease-in;
+}
+
+.nav-link {
+    transition: color 250ms ease-in;
+}
+
+.nav-link.dark {
+    color: rgba(var(--dark-txt), 0.7);
+}
+
+.nav-link.light {
+    color: rgba(var(--white-txt), 0.7);
+}
+
+.nav-item:hover {
+    background-color: rgba(0, 73, 83, 0.5);
+    box-shadow: 0 0 10px rgba(0, 73, 83, 0.1), inset 0 0 1px rgba(0, 73, 83, 1);
+}
+
+.nav-item:hover .nav-link {
+    color: rgba(var(--white-txt), 1);
+}
+
+.nav-item.active {
+    background-color: rgba(0, 73, 83, 0.5);
+    box-shadow: 0 0 10px rgba(0, 73, 83, 0.1), inset 0 0 1px rgba(0, 73, 83, 1);
+}
+
+.nav-item.active .nav-link {
+    color: rgba(var(--white-txt), 1);
+}
+
+/* HERO SECTION */
+#hero {
+    background-color: rgba(0, 73, 83, 0.5);
+    height: 100vh;
+}
+
+/* CAROUSEL */
+.carousel-inner {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.carousel-item {
+    width: 100%;
+    color: white;
+    transform: translateX(100%);
+    transition: transform 0.8s ease-in-out, opacity 100ms linear 250ms;
+    position: absolute;
+    display: block;
+    opacity: 0;
+}
+
+.carousel-item h1 {
+    font-family: var(--font-face);
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.carousel-item.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.carousel-item.prev {
+    transform: translateX(-100%);
+}
+
+.carousel-item.next {
+    transform: translateX(100%);
+}
+
+.carousel-indicators {
+    all: unset;
+    padding-top: 43px;
+    display: flex;
+    list-style: none;
+}
+
+.carousel-indicators li {
+    position: relative;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+}
+
+/* CARATTERISTICHE SECTION */
+#composition {
+    height: 100vh;
+    background-color: white;
+}
+
+.composition-inner {
+    box-sizing: content-box;
+    padding: 100px 0;
+    height: calc(100vh - 210px);
+    position: relative;
+    z-index: 0;
+}
+
+.composition-item {
+    position: absolute;
+    overflow-x: hidden;
+    cursor: pointer;
+    height: auto;
+}
+
+.composition-item:nth-child(1),
+.composition-item:nth-child(4) {
+    padding-right: 10px;
+}
+
+.composition-item:nth-child(3) {
+    padding-left: 10px;
+}
+
+/* ogliarola */
+.composition-item:nth-child(1) {
+    width: 34%;
+    left: 10%;
+    top: 25%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* oval */
+.composition-item:nth-child(2) {
+    width: 300px;
+    height: 800px;
+    display: flex;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.oval {
+    background-color: bisque;
+    width: 300px;
+    height: 80%;
+    border-radius: 50%;
+}
+
+/* nardo */
+.composition-item:nth-child(3) {
+    width: 31%;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* acidity */
+.composition-item:nth-child(4) {
+    width: 33%;
+    left: 12%;
+    top: 50%;
+    transform: translateY(34%);
+    z-index: 1;
+}
+
+/* Arrow container styles */
+.arrow-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transform: translateY(-77px);
+    z-index: 1;
+}
+
+.composition-item:nth-child(1) .arrow-container,
+.composition-item:nth-child(4) .arrow-container {
+    margin-right: 35px;
+}
+
+.composition-item:nth-child(3) .arrow-container {
+    margin-left: 35px;
+}
+
+.composition-item:nth-child(4) .arrow-container {
+    transform: translateY(-125px);
+}
+
+/* Styles for the arrow */
+.arrow {
+    height: 2px;
+    /* Thickness of the arrow line */
+    background-color: black;
+    flex: 1;
+    position: relative;
+    z-index: 3;
+}
+
+/* Styles for the arrowheads */
+.arrow::before,
+.arrow::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    transform: translateY(-4px);
+    position: absolute;
+    z-index: 2;
+}
+
+.arrow-left::before {
+    border-width: 5px 0 5px 10px;
+    border-color: transparent transparent transparent black;
+    right: -10px;
+}
+
+.arrow-right::after {
+    border-width: 5px 10px 5px 0;
+    border-color: transparent black transparent transparent;
+    left: -10px;
+}
+
+/* Positioning the arrow containers */
+.arrow-right {
+    width: 100%;
+    /* Adjust the length of the arrow line */
+    justify-content: flex-start;
+}
+
+.arrow-left {
+    /* Adjust the length of the arrow line */
+    justify-content: flex-end;
+}
+
+/* MAGNIFIER */
+.magnifier {
+    width: 50px;
+    /* Diameter of the circle */
+    height: 50px;
+    /* Diameter of the circle */
+    border: 2px solid black;
+    /* Color and width of the border */
+    border-radius: 50%;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.magnifier::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 55px;
+    /* Diameter of the circle */
+    height: 55px;
+    /* Diameter of the circle */
+    border-radius: 50%;
+    outline: 4px solid blue;
+    z-index: 1;
+}
+
+.magnifier-left {
+    margin-right: 0;
+    margin-left: 20px;
+    /* Adjust space for the left arrow */
+}
+
+.magnifier-right {
+    margin-left: 0;
+    margin-right: 20px;
+    /* Adjust space for the left arrow */
+}
+
+/* SPAN STYLES */
+.composition-body-underlay {
+    position: absolute;
+    width: 34%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: antiquewhite;
+
+}
+.composition-body {
+    max-width: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* Ensure .composition-body is the relative container */
+    /* background-color: blue;
+    border: 1px solid blue;
+    transition: transform 0.3s ease-in; */
+
+    /**/
+    background-color: white;
+}
+
+.composition-item:nth-child(3) .composition-body-underlay {
+    margin-left: auto;
+}
+
+.composition-body span {
+    color: black;
+}
+
+.composition-body span:nth-child(1) {
+    font-size: 50px;
+}
+
+.composition-body span:nth-child(2) {
+    transition: font-size 0.3s ease-in;
+    font-size: 30px;
+}
+
+.composition-item:nth-child(3) .composition-body span {
+    align-self: flex-end;
+}
+
+/* COMPOSITION ITEM CHILD ELEMENTs TRANSITIONS */
+
+/* composition body transition  */
+.composition-item:nth-child(1) .composition-body-underlay {
+    transform: translateX(-125px);
+}
+
+.composition-item:nth-child(3) .composition-body-underlay {
+    transform: translateX(135px);
+}
+
+.composition-item:nth-child(4) .composition-body-underlay {
+    transform: translateX(-120px);
+}
+
+.composition-item:nth-child(1).transition .composition-body-underlay {
+    transform: translateX(0);
+}
+
+.composition-item:nth-child(3).transition .composition-body-underlay {
+    transform: translateX(0);
+    transition-delay: 0.8s;
+}
+
+.composition-item:nth-child(4).transition .composition-body-underlay {
+    transform: translateX(0);
+    transition-delay: 0.6s;
+}
+
+/* arrow transition */
+.composition-item:nth-child(1) .arrow,
+.composition-item:nth-child(3) .arrow,
+.composition-item:nth-child(4) .arrow {
+    flex: 0;
+    transform: translateX(0);
+    transition: flex 0.3s ease-in, transform 0.3s ease-in;
+}
+
+.composition-item:nth-child(1) .arrow,
+.composition-item:nth-child(4) .arrow {
+    transform: translateX(-100%);
+}
+
+.composition-item:nth-child(3) .arrow {
+    transform: translateX(100%);
+}
+
+.composition-item:nth-child(1).transition .arrow,
+.composition-item:nth-child(3).transition .arrow,
+.composition-item:nth-child(4).transition .arrow {
+    flex: 1;
+    transform: translateX(0);
+}
+
+.composition-item:nth-child(3).transition .arrow {
+    transition-delay: 0.3s;
+}
+
+.composition-item:nth-child(4).transition .arrow {
+    transition-delay: 0.6s;
+}
+
+/* magnifier transition */
+.composition-item .magnifier {
+    transform: scale(0);
+    transition: transform 0.3s ease-in;
+}
+
+.composition-item.transition .magnifier {
+    transform: scale(1);
+}
+
+.composition-item:nth-child(3).transition .magnifier {
+    transition-delay: 0.3s;
+}
+
+.composition-item:nth-child(4).transition .magnifier {
+    transition-delay: 0.6s;
+}
+
+/* magnifier outline transition on hover... */
+.magnifier::before {
+    transform: scale(1);
+    outline: 4px solid blue;
+    transition: outline 100ms ease-in, transform 100ms ease-in;
+}
+
+.magnifier:hover::before {
+    transform: scale(0.1);
+    outline: 300px solid blue;
+    z-index: -1;
+}
+
+/* ..on the body and the span ... see JS file */
+.composition-item.hovered .composition-body-underlay::before {
+    transform: scale(1.5);
+}
+.composition-item.hovered .composition-body {
+    z-index: 10000;
+    background-color: rgba(var(--midnight-green), 1);
+}
+
+.composition-item.hovered .composition-body span:nth-child(2) {
+    font-size: 16px;
+    color: white;
+}
+
+
+/* on the arrow */

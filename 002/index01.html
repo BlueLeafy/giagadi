@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* SPAN STYLES */
+        .composition-body {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            background-color: black;
+            border: 1px solid red;
+        }
+
+        .composition-body::before,
+        .composition-body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 100%;
+        }
+
+        .composition-body::before {
+            width: 20%;
+            left: 0;
+            background-color: rgb(100, 149, 237);
+            z-index: -1;
+        }
+
+        .composition-body::after {
+            width: 20%;
+            right: 0;
+            background-color: cornsilk;
+            z-index: -2;
+        }
+
+        .magnifier {
+            width: 50px;
+            /* Diameter of the circle */
+            height: 50px;
+            /* Diameter of the circle */
+            border: 2px solid black;
+            /* Color and width of the border */
+            border-radius: 50%;
+            background-color: black;
+            position: relative;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .magnifier::before {
+            content: '';
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: yellow;
+
+            z-index: -1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="composition-body">
+        <span>SOpra</span>
+    </div>
+
+    <div class="magnifier magnifier-left"></div>
+
+</body>
+
+</html>
